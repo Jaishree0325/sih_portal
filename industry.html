@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Industry / Recruiter Registration</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Industry / Recruiter Registration</h2>
+    <form onsubmit="return validatePasswords()">
+
+      <!-- 1. Company Information -->
+      <label for="companyName">Company Name</label>
+      <input type="text" id="companyName" name="companyName" required />
+
+      <label for="industry">Industry / Sector</label>
+      <select id="industry" name="industry">
+        <option value="" disabled selected>Select Industry</option>
+        <option value="IT">IT</option>
+        <option value="Manufacturing">Manufacturing</option>
+        <option value="Finance">Finance</option>
+        <option value="Healthcare">Healthcare</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="companyType">Company Type</label>
+      <select id="companyType" name="companyType">
+        <option value="" disabled selected>Select Type</option>
+        <option value="Startup">Startup</option>
+        <option value="MSME">MSME</option>
+        <option value="MNC">MNC</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="companyWebsite">Company Website</label>
+      <input type="url" id="companyWebsite" name="companyWebsite" required />
+
+      <!-- 2. Recruiter Details -->
+      <label for="recruiterName">Recruiter’s Full Name</label>
+      <input type="text" id="recruiterName" name="recruiterName" required />
+
+      <label for="designation">Designation</label>
+      <input type="text" id="designation" name="designation" required />
+
+      <label for="email">Official Email ID</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="mobile">Mobile Number</label>
+      <input type="tel" id="mobile" name="mobile" required />
+
+      <!-- 3. Authentication -->
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required />
+
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required />
+
+      <span id="errorMsg" style="color: red; display: none;">Passwords do not match.</span>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <script>
+    function validatePasswords() {
+      const pwd = document.getElementById("password").value;
+      const confirmPwd = document.getElementById("confirmPassword").value;
+      const errorMsg = document.getElementById("errorMsg");
+
+      if (pwd !== confirmPwd) {
+        errorMsg.style.display = "inline";
+        return false;
+      }
+
+      errorMsg.style.display = "none";
+      return true;
+    }
+
+    document.querySelector("form").addEventListener("submit", function(event) {
+      const requiredFields = document.querySelectorAll("input[required], select[required]");
+      let allFilled = true;
+
+      requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+          field.style.border = "2px solid red";
+          allFilled = false;
+        } else {
+          field.style.border = "";
+        }
+      });
+
+      if (!validatePasswords()) {
+        allFilled = false;
+      }
+
+      if (!allFilled) {
+        event.preventDefault();
+        alert("Please fill all required fields correctly before submitting.");
+      }
+    });
+  </script>
+</body>
+</html>

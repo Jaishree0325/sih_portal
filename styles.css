@@ -1,0 +1,196 @@
+/* General Page Styling */
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+/* Form Elements */
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+/* Name Fields */
+.name-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.name-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.name-field label {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.name-field input[type="text"] {
+  font-size: 13px;
+  padding: 6px;
+}
+
+/* Uniform Input */
+.uniform-input {
+  font-size: 13px;
+  max-width: 300px;
+  padding: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Radio Button Groups */
+.gender-row,
+.duration-row,
+.degree-type-row,
+.placement-row,
+.relocate-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+  font-size: 13px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.gender-row label,
+.duration-row label,
+.degree-type-row label,
+.placement-row label,
+.relocate-row label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.gender-row input[type="radio"],
+.duration-row input[type="radio"],
+.degree-type-row input[type="radio"],
+.placement-row input[type="radio"],
+.relocate-row input[type="radio"] {
+  margin: 0;
+}
+
+/* Skills Checkboxes */
+.skills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 6px;
+  font-size: 13px;
+  align-items: center;
+}
+
+.skills-row label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.skills-row input[type="checkbox"] {
+  margin: 0;
+}
+
+/* Learning Style Checkboxes */
+.learning-style-checkbox {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+  font-size: 13px;
+  flex-wrap: wrap;
+}
+
+.learning-style-checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+/* Optional Dropdown Styling (if used) */
+.dropdown-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  font-size: 13px;
+}
+
+.dropdown-btn {
+  padding: 6px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+
+.dropdown-list {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  max-height: 200px;
+  overflow-y: auto;
+  width: 100%;
+  z-index: 1;
+  padding: 6px;
+}
+
+.dropdown-list label {
+  display: block;
+  margin-bottom: 4px;
+}

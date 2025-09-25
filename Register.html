@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Select Your Domain</title>
+  <link rel="stylesheet" href="stylee.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Select Your Domain</h1>
+
+    <select id="domainSelect">
+      <option value="" disabled selected>Choose an option</option>
+      <option value="student">Student</option>
+      <option value="mentor">Mentor</option>
+      <option value="industry">Industry</option>
+      <option value="admin">Placement Cell</option>
+    </select>
+
+    <div class="link-row">
+      <a href="Index.html" id="backLink">←Back</a>
+      <a href="#" id="nextLink">Next→</a>
+    </div>
+  </div>
+
+  <script>
+    const domainSelect = document.getElementById("domainSelect");
+    const nextLink = document.getElementById("nextLink");
+
+    domainSelect.addEventListener("change", function () {
+      const selected = domainSelect.value;
+
+      switch (selected) {
+        case "student":
+          nextLink.href = "student.html";
+          break;
+        case "mentor":
+          nextLink.href = "mentor.html";
+          break;
+        case "industry":
+          nextLink.href = "industry.html";
+          break;
+        case "admin":
+          nextLink.href = "admin.html";
+          break;
+        default:
+          nextLink.href = "#";
+      }
+    });
+  </script>
+</body>
+</html>

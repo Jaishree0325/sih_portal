@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Placement Cell Admin Form</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+
+  <div class="container">
+    <h2>Placement Cell Admin Form</h2>
+
+    <!-- Name & Role -->
+    <div class="name-row">
+      <div class="name-field">
+        <label for="adminName">Name</label>
+        <input type="text" id="adminName" name="adminName">
+      </div>
+      <div class="name-field">
+        <label for="designation">Designation</label>
+        <input type="text" id="designation" name="designation">
+      </div>
+      <div class="name-field">
+        <label for="department">Department</label>
+        <input type="text" id="department" name="department">
+      </div>
+    </div>
+
+    <!-- Contact Info -->
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email">
+
+    <label for="phone">Phone</label>
+    <input type="tel" id="phone" name="phone">
+
+    <label for="address">Office Address</label>
+    <textarea id="address" name="address"></textarea>
+
+    <!-- Authentication -->
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username">
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password">
+
+    <label>2FA Option</label>
+    <div class="gender-row">
+      <label><input type="radio" name="2fa" value="none"> None</label>
+      <label><input type="radio" name="2fa" value="email"> Email</label>
+      <label><input type="radio" name="2fa" value="sms"> SMS</label>
+    </div>
+
+    <!-- Company Verification -->
+    <label for="companyName">Company Name</label>
+    <input type="text" id="companyName" name="companyName">
+
+    <label for="hrContact">HR Contact</label>
+    <input type="text" id="hrContact" name="hrContact">
+
+    <label for="documents">Upload MoU / Registration Proof</label>
+    <input type="file" id="documents" name="documents">
+
+    <!-- Job Details -->
+    <label for="position">Position Title</label>
+    <input type="text" id="position" name="position">
+
+    <label for="description">Job Description</label>
+    <textarea id="description" name="description"></textarea>
+
+    <label for="eligibility">Eligibility Criteria</label>
+    <textarea id="eligibility" name="eligibility" placeholder="CGPA, branch, year, skills"></textarea>
+
+    <label for="stipend">Stipend / Benefits</label>
+    <input type="text" id="stipend" name="stipend">
+
+    <label>Location</label>
+    <div class="placement-row">
+      <label><input type="radio" name="location" value="onsite"> Onsite</label>
+      <label><input type="radio" name="location" value="remote"> Remote</label>
+      <label><input type="radio" name="location" value="hybrid"> Hybrid</label>
+    </div>
+
+    <label for="startDate">Start Date</label>
+    <input type="date" id="startDate" name="startDate">
+
+    <label>Status</label>
+    <select name="status">
+      <option value="pending">Pending</option>
+      <option value="verified">Verified</option>
+      <option value="published">Published</option>
+      <option value="closed">Closed</option>
+    </select>
+
+    <!-- Skills -->
+    <label>Skills Required</label>
+    <div class="skills-row">
+      <label><input type="checkbox" name="skills" value="Java"> Java</label>
+      <label><input type="checkbox" name="skills" value="Python"> Python</label>
+      <label><input type="checkbox" name="skills" value="HTML"> HTML</label>
+      <label><input type="checkbox" name="skills" value="CSS"> CSS</label>
+      <label><input type="checkbox" name="skills" value="SQL"> SQL</label>
+    </div>
+
+    <!-- Submit -->
+    <button type="submit">Submit</button>
+  </div>
+
+</body>
+</html>

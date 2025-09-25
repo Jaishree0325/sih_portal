@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Faculty Mentor Registration</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Faculty Mentor Registration</h2>
+    <form onsubmit="return validatePasswords()">
+
+      <!-- 1. Personal Information -->
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName" name="fullName" required />
+
+      <label for="designation">Designation</label>
+      <select id="designation" name="designation" required>
+        <option value="" disabled selected>Select Designation</option>
+        <option value="Professor">Professor</option>
+        <option value="Associate Professor">Associate Professor</option>
+        <option value="Assistant Professor">Assistant Professor</option>
+        <option value="Lecturer">Lecturer</option>
+      </select>
+
+      <label for="department">Department / Specialization</label>
+      <input type="text" id="department" name="department" required />
+
+      <label for="facultyId">Faculty ID / Employee ID</label>
+      <input type="text" id="facultyId" name="facultyId" />
+
+      <!-- 2. Contact Information -->
+      <label for="email">Official Email ID</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="mobile">Mobile Number</label>
+      <input type="tel" id="mobile" name="mobile" required />
+
+      <label for="officeContact">Office Contact Number (optional)</label>
+      <input type="tel" id="officeContact" name="officeContact" />
+
+      <!-- 3. Authentication -->
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Auto-generated or custom" />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required />
+
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required />
+
+      <label for="securityQuestion">Security Question (optional)</label>
+      <input type="text" id="securityQuestion" name="securityQuestion" />
+
+      <label for="securityAnswer">Security Answer (optional)</label>
+      <input type="text" id="securityAnswer" name="securityAnswer" />
+
+      <span id="errorMsg" style="color: red; display: none;">Passwords do not match.</span>
+
+      <!-- 4. Academic Details -->
+      <label for="experience">Years of Experience</label>
+      <input type="number" id="experience" name="experience" min="0" />
+
+      <label for="expertise">Areas of Expertise / Research Interests</label>
+      <textarea id="expertise" name="expertise"></textarea>
+
+      <label for="courses">Courses Taught / Academic Role</label>
+      <textarea id="courses" name="courses"></textarea>
+
+      <!-- 5. Verification -->
+      <label for="idProof">Faculty ID Proof (upload scan/photo)</label>
+      <input type="file" id="idProof" name="idProof" accept="image/*,application/pdf" />
+
+      <label for="approvalStatus">Approval by Placement Cell</label>
+      <select id="approvalStatus" name="approvalStatus">
+        <option value="Pending">Pending</option>
+        <option value="Verified">Verified</option>
+        <option value="Active">Active</option>
+      </select>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <script>
+    function validatePasswords() {
+      const pwd = document.getElementById("password").value;
+      const confirmPwd = document.getElementById("confirmPassword").value;
+      const errorMsg = document.getElementById("errorMsg");
+
+      if (pwd !== confirmPwd) {
+        errorMsg.style.display = "inline";
+        return false;
+      }
+
+      errorMsg.style.display = "none";
+      return true;
+    }
+
+    document.querySelector("form").addEventListener("submit", function(event) {
+      const requiredFields = document.querySelectorAll("input[required], select[required]");
+      let allFilled = true;
+
+      requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+          field.style.border = "2px solid red";
+          allFilled = false;
+        } else {
+          field.style.border = "";
+        }
+      });
+
+      if (!validatePasswords()) {
+        allFilled = false;
+      }
+
+      if (!allFilled) {
+        event.preventDefault();
+        alert("Please fill all required fields correctly before submitting.");
+      }
+    });
+  </script>
+</body>
+</html>

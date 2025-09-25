@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Profile Login</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Student Profile Login</h2>
+    <form>
+      <!-- All input fields with name attributes -->
+      <!-- ... [your full form content remains unchanged except all inputs now have name attributes] ... -->
+<div class="name-row">
+        <div class="name-field">
+          <label for="firstName">First Name <span style="color: red;">*</span></label>
+          <input type="text" id="firstName" name="firstName" class="uniform-input" required />
+        </div>
+        <div class="name-field">
+          <label for="middleName">Middle Name</label>
+          <input type="text" id="middleName" name="middleName" class="uniform-input"/>
+        </div>
+        <div class="name-field">
+          <label for="lastName">Last Name <span style="color: red;">*</span></label>
+          <input type="text" id="lastName" name="lastName" class="uniform-input" required />
+        </div>
+      </div>
+
+      <label for="studentId">Student ID</label>
+      <input type="text" id="studentId" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required />
+
+      <label for="aadhaar">Aadhaar Number</label>
+      <input type="text" id="aadhaar" name="aadhaar" maxlength="12" pattern="\d{12}" inputmode="numeric" required placeholder="Enter 12-digit Aadhaar number" />
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" required />
+
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" required />
+
+      <label>Gender</label>
+      <div class="gender-row">
+        <label><input type="radio" name="gender" value="Male" required> Male</label>
+        <label><input type="radio" name="gender" value="Female"> Female</label>
+        <label><input type="radio" name="gender" value="Other"> Other</label>
+      </div>
+
+      <label>Degree Duration</label>
+      <div class="duration-row">
+        <label><input type="radio" name="degreeDuration" value="2" required> 2 yrs</label>
+        <label><input type="radio" name="degreeDuration" value="3"> 3 yrs</label>
+        <label><input type="radio" name="degreeDuration" value="4"> 4 yrs</label>
+        <label><input type="radio" name="degreeDuration" value="5"> 5 yrs</label>
+      </div>
+
+      <label>Degree Type</label>
+      <div class="degree-type-row">
+        <label><input type="radio" name="degreeType" value="B.E" onclick="showDepartment()"> B.E</label>
+        <label><input type="radio" name="degreeType" value="B.Tech" onclick="showDepartment()"> B.Tech</label>
+        <label><input type="radio" name="degreeType" value="B.Sc" onclick="hideDepartment()"> B.Sc</label>
+        <label><input type="radio" name="degreeType" value="BCA" onclick="hideDepartment()"> BCA</label>
+        <label><input type="radio" name="degreeType" value="M.Tech" onclick="showDepartment()"> M.Tech</label>
+        <label><input type="radio" name="degreeType" value="Dual Degree" onclick="showDepartment()"> Dual Degree</label>
+      </div>
+
+      <div id="departmentField" style="display: none; margin-top: 10px;">
+        <label for="department">Department</label>
+        <input type="text" id="department" required />
+      </div>
+
+      <label for="semester">Current Semester</label>
+      <input type="number" id="semester" min="1" max="8" required />
+
+      <label for="cgpa">CGPA</label>
+      <input type="number" id="cgpa" name="cgpa" step="0.01" min="5" max="10" required placeholder="Enter CGPA (5.00 - 10.00)" />
+
+      <!-- Placement Info -->
+      <label for="resume">Resume Link</label>
+      <input type="url" id="resume" />
+
+      <label for="jobRole">Preferred Job Role</label>
+      <input type="text" id="jobRole" />
+
+      <label>Placement Status</label>
+      <div class="placement-row">
+        <label><input type="radio" name="placementStatus" value="Eligible" required> Eligible</label>
+        <label><input type="radio" name="placementStatus" value="Placed"> Placed</label>
+        <label><input type="radio" name="placementStatus" value="Not Interested"> Not Interested</label>
+      </div>
+
+      <!-- Location Info -->
+      <label for="currentAddress">Current Address</label>
+      <textarea id="currentAddress"></textarea>
+
+      <label for="preferredLocation">Preferred Job Location</label>
+      <input type="text" id="preferredLocation" />
+
+      <label>Willing to Relocate?</label>
+      <div class="relocate-row">
+        <label><input type="radio" name="relocate" value="Yes" required> Yes</label>
+        <label><input type="radio" name="relocate" value="No"> No</label>
+      </div>
+
+      <!-- Skill Learning -->
+      <label>Skills to Learn</label>
+      <div class="skills-row">
+        <label><input type="checkbox" name="skills[]" value="Java"> Java</label>
+        <label><input type="checkbox" name="skills[]" value="C"> C</label>
+        <label><input type="checkbox" name="skills[]" value="Python"> Python</label>
+        <label><input type="checkbox" name="skills[]" value="HTML"> HTML</label>
+        <label><input type="checkbox" name="skills[]" value="CSS"> CSS</label>
+        <label><input type="checkbox" name="skills[]" value="JavaScript"> JavaScript</label>
+        <label><input type="checkbox" name="skills[]" value="Power BI"> Power BI</label>
+        <label><input type="checkbox" name="skills[]" value="Express.js"> Express.js</label>
+        <label><input type="checkbox" name="skills[]" value="React.js"> React.js</label>
+        <label><input type="checkbox" name="skills[]" value="Blockchain"> Blockchain</label>
+      </div>
+
+      <label>Preferred Learning Style(s)</label>
+      <div class="learning-style-checkbox">
+        <label><input type="checkbox" name="learningStyle" value="Visual"> Visual</label>
+        <label><input type="checkbox" name="learningStyle" value="Hands-on"> Hands-on</label>
+        <label><input type="checkbox" name="learningStyle" value="Reading"> Reading</label>
+        <label><input type="checkbox" name="learningStyle" value="Collaborative"> Collaborative</label>
+      </div>
+
+      <!-- Login Info -->
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required />
+
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required />
+
+      <span id="errorMsg" style="color: red; display: none;">Passwords do not match.</span>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <script>
+    function validatePasswords() {
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+      const errorMsg = document.getElementById("errorMsg");
+
+      if (password !== confirmPassword) {
+        errorMsg.style.display = "inline";
+        return false;
+      } else {
+        errorMsg.style.display = "none";
+        return true;
+      }
+    }
+
+    function validateForm(event) {
+      event.preventDefault();
+      const form = document.querySelector("form");
+      let allValid = true;
+
+      const requiredInputs = form.querySelectorAll("input[required], textarea[required]");
+      requiredInputs.forEach(input => {
+        if (!input.value.trim()) {
+          input.style.border = "2px solid red";
+          allValid = false;
+        } else {
+          input.style.border = "";
+        }
+      });
+
+      const radioGroups = ["gender", "degreeDuration", "degreeType", "placementStatus", "relocate"];
+      radioGroups.forEach(name => {
+        const radios = form.querySelectorAll(`input[name="${name}"]`);
+        if (![...radios].some(r => r.checked)) {
+          allValid = false;
+          radios[0].parentElement.style.color = "red";
+        } else {
+          radios[0].parentElement.style.color = "";
+        }
+      });
+
+      const skills = form.querySelectorAll('input[name="skills[]"]');
+      if (![...skills].some(cb => cb.checked)) {
+        allValid = false;
+        document.querySelector(".skills-row").style.border = "2px dashed red";
+      } else {
+        document.querySelector(".skills-row").style.border = "";
+      }
+
+      const learningStyles = form.querySelectorAll('input[name="learningStyle"]');
+      if (![...learningStyles].some(cb => cb.checked)) {
+        allValid = false;
+        document.querySelector(".learning-style-checkbox").style.border = "2px dashed red";
+      } else {
+        document.querySelector(".learning-style-checkbox").style.border = "";
+      }
+
+      if (!validatePasswords()) {
+        allValid = false;
+      }
+
+      if (!allValid) {
+        alert("Please fill all required fields correctly before submitting.");
+      } else {
+        window.location.href = "homepage.html";
+      }
+    }
+
+    document.querySelector("form").addEventListener("submit", validateForm);
+
+    function showDepartment() {
+      document.getElementById("departmentField").style.display = "block";
+    }
+
+    function hideDepartment() {
+      document.getElementById("departmentField").style.display = "none";
+    }
+  </script>
+</body>
+</html>
