@@ -118,6 +118,11 @@
         <label><input type="checkbox" name="skills[]" value="Express.js"> Express.js</label>
         <label><input type="checkbox" name="skills[]" value="React.js"> React.js</label>
         <label><input type="checkbox" name="skills[]" value="Blockchain"> Blockchain</label>
+        <label><input type="checkbox" id="otherSkillCheckbox" name="skills[]" value="Other" onchange="toggleOtherSkill()"> Other</label>
+      </div>
+      <div id="otherSkillInput" style="display: none; margin-top: 10px;">
+        <label for="otherSkillText">Please specify other skills</label>
+        <input type="text" id="otherSkillText" name="otherSkillText" placeholder="Enter your skill(s)" />
       </div>
 
       <label>Preferred Learning Style(s)</label>
@@ -158,6 +163,11 @@
         return true;
       }
     }
+    function toggleOtherSkill() {
+      const otherCheckbox = document.getElementById("otherSkillCheckbox");
+      const otherInput = document.getElementById("otherSkillInput");
+      otherInput.style.display = otherCheckbox.checked ? "block" : "none";
+    }
 
     function validateForm(event) {
       event.preventDefault();
@@ -193,6 +203,13 @@
         document.querySelector(".skills-row").style.border = "";
       }
 
+      const otherSkillText = document.getElementById("otherSkillText");
+      if (document.getElementById("otherSkillCheckbox").checked && !otherSkillText.value.trim()) {
+        allValid = false;
+        otherSkillText.style.border = "2px solid red";
+      } else {
+        otherSkillText.style.border = "";
+      }
       const learningStyles = form.querySelectorAll('input[name="learningStyle"]');
       if (![...learningStyles].some(cb => cb.checked)) {
         allValid = false;
