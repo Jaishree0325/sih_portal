@@ -28,20 +28,7 @@
       padding: 10px 20px;
       z-index: 10;
     }
-    .task-button {
-      background-color: rgb(10, 48, 218);
-      color: white;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 4px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
 
-    .task-button:hover {
-      background-color: rgb(8, 40, 180);
-    }
     .profile-icon {
       font-weight: bold;
       font-size: 18px;
@@ -57,6 +44,45 @@
       padding: 8px;
       border-radius: 4px;
       border: none;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .task-button {
+      background-color: rgb(10, 48, 218);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .task-button:hover {
+      background-color: rgb(8, 40, 180);
+    }
+
+    .login-button {
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      background-color: white;
+      color: rgb(10, 48, 218);
+      border: 2px solid rgb(10, 48, 218);
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .login-button:hover {
+      background-color: rgb(10, 48, 218);
+      color: white;
     }
 
     .section {
@@ -116,7 +142,10 @@
     <div class="search-bar">
       <input type="text" placeholder="🔍Search">
     </div>
-    <button class="task-button">Tasks 📝</button>
+    <div class="nav-buttons">
+      <button class="task-button">Tasks 📝</button>
+      <a href="index.html" class="login-button">Login 🔐 </a>
+    </div>
   </div>
 
   <!-- Section 1: Courses in Software -->
